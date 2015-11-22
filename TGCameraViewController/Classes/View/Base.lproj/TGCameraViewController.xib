@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -14,6 +14,7 @@
                 <outlet property="bottomRightView" destination="HFV-tF-409" id="gvx-Rz-7bX"/>
                 <outlet property="captureView" destination="dIq-rQ-gzr" id="F4T-QP-lPu"/>
                 <outlet property="closeButton" destination="O3k-MF-E1l" id="WpI-xb-eE2"/>
+                <outlet property="coverView" destination="zGl-Os-9NC" id="m1w-BF-Lcj"/>
                 <outlet property="flashButton" destination="p7O-pE-Mp0" id="Tqo-vg-CGw"/>
                 <outlet property="gridButton" destination="Nol-dD-ETh" id="tfG-QF-CbC"/>
                 <outlet property="separatorView" destination="xFF-75-cke" id="J08-U0-hk1"/>
@@ -215,6 +216,31 @@
                         <constraint firstAttribute="trailing" secondItem="wxI-gO-dPX" secondAttribute="trailing" constant="20" id="xUB-TR-bow"/>
                     </constraints>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Os-9NC">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-ep-ADp" userLabel="Title Label" customClass="TGTintedLabel">
+                            <rect key="frame" x="276" y="361.5" width="46.5" height="21"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                            <color key="textColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera can only be used in portrait orientation. Try rotating the device." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="hlZ-cp-QpV" userLabel="Subtitle Label" customClass="TGTintedLabel">
+                            <rect key="frame" x="30" y="390.5" width="540" height="39.5"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                            <color key="textColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1764705882" green="0.18823529410000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="hlZ-cp-QpV" firstAttribute="top" secondItem="HQY-ep-ADp" secondAttribute="bottom" constant="8" id="7Xb-N4-LKj"/>
+                        <constraint firstItem="HQY-ep-ADp" firstAttribute="centerX" secondItem="hlZ-cp-QpV" secondAttribute="centerX" id="HQM-SE-4cj"/>
+                        <constraint firstAttribute="trailing" secondItem="hlZ-cp-QpV" secondAttribute="trailing" constant="30" id="PxV-U5-tk8"/>
+                        <constraint firstItem="hlZ-cp-QpV" firstAttribute="centerY" secondItem="zGl-Os-9NC" secondAttribute="centerY" id="XWB-lh-SUj"/>
+                        <constraint firstItem="hlZ-cp-QpV" firstAttribute="centerX" secondItem="zGl-Os-9NC" secondAttribute="centerX" id="mdo-Pm-DMd"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" red="1" green="0.35686275362968445" blue="0.0039215688593685627" alpha="1" colorSpace="deviceRGB"/>
@@ -223,12 +249,16 @@
                 <constraint firstItem="dIq-rQ-gzr" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="bottom" id="5ZP-oL-R1c"/>
                 <constraint firstItem="Ni6-M2-hWT" firstAttribute="top" secondItem="dIq-rQ-gzr" secondAttribute="bottom" id="5h5-Im-tPi"/>
                 <constraint firstAttribute="trailing" secondItem="dIq-rQ-gzr" secondAttribute="trailing" id="7Kd-eD-uPh"/>
+                <constraint firstItem="zGl-Os-9NC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8F2-bM-jOL"/>
                 <constraint firstItem="dit-c7-IZk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DSd-mG-uAC"/>
                 <constraint firstAttribute="trailing" secondItem="Ni6-M2-hWT" secondAttribute="trailing" id="No8-w5-daU"/>
                 <constraint firstItem="dIq-rQ-gzr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QOL-6w-tCk"/>
+                <constraint firstItem="zGl-Os-9NC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UGW-oz-4A1"/>
                 <constraint firstItem="rJ9-I8-VJI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wij-UT-7tV"/>
                 <constraint firstItem="rJ9-I8-VJI" firstAttribute="top" secondItem="Ni6-M2-hWT" secondAttribute="bottom" id="YI8-Ga-mvu"/>
+                <constraint firstAttribute="bottom" secondItem="zGl-Os-9NC" secondAttribute="bottom" id="YQ9-Of-HPg"/>
                 <constraint firstItem="dit-c7-IZk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YT3-Tx-jSN"/>
+                <constraint firstAttribute="trailing" secondItem="zGl-Os-9NC" secondAttribute="trailing" id="lBF-xx-sWn"/>
                 <constraint firstAttribute="bottom" secondItem="rJ9-I8-VJI" secondAttribute="bottom" id="lOM-wg-tNA"/>
                 <constraint firstAttribute="trailing" secondItem="dit-c7-IZk" secondAttribute="trailing" id="qtq-Qw-eJv"/>
                 <constraint firstItem="Ni6-M2-hWT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wZ3-UQ-hfd"/>
