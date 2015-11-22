@@ -30,6 +30,7 @@
 
 
 @interface TGCameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIView *coverView;
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIImageView *topLeftView;
@@ -297,38 +298,13 @@
 - (void)deviceOrientationDidChangeNotification
 {
     UIDeviceOrientation orientation = [UIDevice.currentDevice orientation];
-    NSInteger degress;
     
-    switch (orientation) {
-        case UIDeviceOrientationFaceUp:
-        case UIDeviceOrientationPortrait:
-        case UIDeviceOrientationUnknown:
-            degress = 0;
-            break;
-            
-        case UIDeviceOrientationLandscapeLeft:
-            degress = 90;
-            break;
-            
-        case UIDeviceOrientationFaceDown:
-        case UIDeviceOrientationPortraitUpsideDown:
-            degress = 180;
-            break;
-            
-        case UIDeviceOrientationLandscapeRight:
-            degress = 270;
-            break;
+    //Make view blank and tell user to use portrait
+    if(UIDeviceOrientationIsLandscape(orientation)) {
+        self.coverView.hidden = NO;
+    } else {
+        self.coverView.hidden = YES;
     }
-    
-    CGFloat radians = degress * M_PI / 180;
-    CGAffineTransform transform = CGAffineTransformMakeRotation(radians);
-    
-    [UIView animateWithDuration:.5f animations:^{
-        _gridButton.transform =
-        _toggleButton.transform =
-        _albumButton.transform =
-        _flashButton.transform = transform;
-    }];
 }
 
 - (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation
