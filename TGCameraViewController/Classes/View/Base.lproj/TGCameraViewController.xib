@@ -216,7 +216,7 @@
                         <constraint firstAttribute="trailing" secondItem="wxI-gO-dPX" secondAttribute="trailing" constant="20" id="xUB-TR-bow"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Os-9NC">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGl-Os-9NC">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera can only be used in portrait orientation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="244" translatesAutoresizingMaskIntoConstraints="NO" id="hlZ-cp-QpV" userLabel="Subtitle Label" customClass="TGTintedLabel">
