@@ -299,11 +299,13 @@
 {
     UIDeviceOrientation orientation = [UIDevice.currentDevice orientation];
     
-    //Make view blank and tell user to use portrait
-    if(UIDeviceOrientationIsLandscape(orientation)) {
-        self.coverView.hidden = NO;
-    } else {
-        self.coverView.hidden = YES;
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        //Make view blank and tell user to use portrait
+        if(UIDeviceOrientationIsLandscape(orientation)) {
+            self.coverView.hidden = NO;
+        } else {
+            self.coverView.hidden = YES;
+        }
     }
 }
 
