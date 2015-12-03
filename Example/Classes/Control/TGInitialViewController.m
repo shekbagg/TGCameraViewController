@@ -101,6 +101,7 @@
 - (IBAction)takePhotoTapped
 {    
     TGCameraNavigationController *navigationController = [TGCameraNavigationController newWithCameraDelegate:self];
+    [TGCameraColor setTintColor: [UIColor grayColor]];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
